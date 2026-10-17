@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Book Alive Vocal Group for your event — weddings, churches, festivals, and private parties." />
+  <meta name="theme-color" content="#17100c" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Booking — Alive Vocal Group</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Alive Vocal Group<small>Sister Trio · NC</small></a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="bio.html">Bio</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="contact.html" aria-current="page">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="block">
+      <div class="wrap">
+        <p class="kicker">Get in touch</p>
+        <h1 class="page-title">Book Alive Vocal Group</h1>
+        <hr class="divider" />
+        <p class="lede">Weddings, church services, festivals, private parties — three-part sister harmony brings something special to any event. Tell us about yours below.</p>
+
+        <div class="card" style="margin-top:2rem">
+          <form class="booking" id="booking-form" novalidate>
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="f-email">Your email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="f-type">Event type</label>
+              <select id="f-type" name="event-type">
+                <option>Wedding</option>
+                <option>Church service</option>
+                <option>Festival / fair</option>
+                <option>Corporate event</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-date">Event date</label>
+              <input id="f-date" name="date" type="date" />
+            </div>
+            <div class="field">
+              <label for="f-msg">Tell us about your event</label>
+              <textarea id="f-msg" name="message" placeholder="Venue, expected guests, the kind of music you'd love to hear…"></textarea>
+            </div>
+            <div>
+              <button class="btn solid" type="submit"><span class="dot"></span>Send Booking Inquiry</button>
+            </div>
+            <p class="form-note">This opens your email app with the inquiry addressed to booking@alivevocalgroup.com — just hit send.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap" style="text-align:center">
+        <p class="kicker">Or find them here</p>
+        <h2 class="section-title">Follow Alive Vocal Group</h2>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn" href="https://www.tiktok.com/@alivevocalgroup" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn" href="https://www.instagram.com/alivevocalgroup" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://www.youtube.com/@alivevocalgroup" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn" href="https://www.facebook.com/alivevocalgroup" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">Alive Vocal Group</a>
+      <p>Jessica Jefferson · Amanda King · Emily King — Rich Square, North Carolina</p>
+      <div class="btn-row">
+        <a class="btn ghost" href="https://www.tiktok.com/@alivevocalgroup" target="_blank" rel="noopener">TikTok</a>
+        <a class="btn ghost" href="https://www.instagram.com/alivevocalgroup" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn ghost" href="https://www.youtube.com/@alivevocalgroup" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn ghost" href="https://www.facebook.com/alivevocalgroup" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <p>© 2026 Alive Vocal Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('f-name').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      var type = document.getElementById('f-type').value;
+      var date = document.getElementById('f-date').value;
+      var msg = document.getElementById('f-msg').value.trim();
+      if (!name || !email) {
+        alert('Please add your name and email so the group can reply to you.');
+        return;
+      }
+      var subject = 'Booking inquiry — ' + type + (date ? ' on ' + date : '');
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\nEvent type: ' + type +
+        '\nEvent date: ' + (date || 'Not set yet') + '\n\n' + msg;
+      window.location.href = 'mailto:booking@alivevocalgroup.com' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
