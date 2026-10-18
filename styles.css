@@ -68,3 +68,16 @@ a{color:var(--gold-soft)}
 .site-footer{border-top:1px solid var(--line);background:var(--bg2);margin-top:2rem}
 .footer-inner{max-width:1080px;margin:0 auto;padding:2.4rem 20px;text-align:center;color:var(--muted);font-size:.92rem}
 .footer-inner.brand{justify-content:center;margin-bottom:.4rem}
+
+/* ---------- social icon buttons ---------- */
+.social-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
+.footer-inner .social-row { justify-content: center; }
+.social-btn {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(23,16,12,0.55);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.social-btn:hover { background: rgba(217,164,65,0.18); transform: translateY(-2px); }
+.social-btn svg { width: 24px; height: 24px; fill: var(--gold-soft); }
